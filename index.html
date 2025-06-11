@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AC1</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+    <header class="header">
+        <img src="./logo/Logo.png" alt="Logo" class="logo" />
+        <img src="./logo/header.png" alt="Header" class="header-image" />
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Exception Handling-I</h1>
+        <p class="text-center">Click on each topic to learn more.</p>
+        <div class="row">
+            <div>
+                <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#iterablesModal">
+                    DIFFERENCE BETWEEN ERROR AND EXCEPTION
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#iteratingIterablesModal">
+                    ‘try’ AND ‘except’
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#membershipOperatorModal">
+                    HANDLING SPECIFIC EXCEPTIONS
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-custom btn-block" data-toggle="modal"
+                    data-target="#elseInExceptionHandlingModal">
+                    ‘else’ and ‘finally’ IN EXCEPTION HANDLING
+                </button>
+            </div>
+            <!-- <div>
+                <button class="btn btn-custom btn-block" data-toggle="modal"
+                    data-target="#finallyInExceptionHandlingModal">
+                     IN EXCEPTION HANDLING
+                </button>
+            </div> -->
+
+        </div>
+
+
+
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="iterablesModal" tabindex="-1" aria-labelledby="iterablesLabel" aria-hidden="true">
+        <div class="modal-dialog custom-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="iterablesLabel">DIFFERENCE BETWEEN ERROR AND EXCEPTION</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-container">
+                        <div class="text-content">
+                            <div style="font-size: 1.5rem;">
+                                <img src="./images/Image_1.png" alt="" /> <br> <br>
+                                What did you notice in this code? <br>
+                                It’s missing closing parentheses. <br>
+                                Let’s run the code and see what happens. <br><br>
+                                <img src="./images/Image_2.png" alt="" /> <br> <br>
+                                We get an angry red message for <b>SyntaxError</b>. <br><br>
+                                <b>Errors</b> are mistakes that prevent the code from being understood. It makes Python
+                                refuse to run the program because it doesn’t follow the rules. <br><br>
+                                Let’s have a look at another code.
+                                <br><br>
+                                <img src="./images/Image_3.png" alt="" /> <br> <br>
+                                What did you notice? Everything looks good, right? <br>
+                                Let’s run the code and enter 4 as input. <br><br>
+                                <img src="./images/Image_4.png" alt="" /> <br> <br>
+                                That works well. Now let’s try giving 0 as input.
+                                <br><br>
+                                <img src="./images/Image_5.png" alt="" /> <br> <br>
+                                What just happened? <br><br>
+                                Since dividing a number by 0 is impossible, the code gave a <b>ZeroDivisionError</b>.
+                                <br><br>
+                                Here, the syntax of the code is perfect, but something unexpected happened <b> while it
+                                    was running</b>. <br><br>
+                                This is called an <b>exception</b>. <br><br>
+                                Python doesn’t know what to do with it unless we tell it how to respond. <br>
+                                What will happen if I run this and enter ‘hello’? <br><br>
+                                Let’s check it. <br><br>
+                                <br><br>
+                                <img src="./images/Image_6.png" alt="" /> <br> <br>
+                                In this code, when we enter 0 or text, the code doesn’t crash immediately, but when it
+                                goes to the problematic part, Python throws an <b>exception</b>.
+                                <br><br>
+                                <strong style="color: #28a745;">EXCEPTION</strong><br><br>
+                                An <b>exception</b> is an error that happens during execution. It is Python’s way of
+                                saying: <br><br>
+                                “Hey! Something unexpected just happened, and I don’t know how to continue!”<br><br>
+                                It could be: <br>
+                                <ul>
+                                    <li> A bad input</li>
+                                    <li> Dividing by zero</li>
+                                    <li> Accessing a file that doesn't exist</li>
+                                    <li> Using the wrong data type</li>
+                                </ul>
+                                Lots of things can go wrong. <br><br>
+                                <strong style="color: #28a745;">WHY IS EXCEPTION HANDLING IMPORTANT?
+                                </strong><br><br>
+                                So now that we know what an exception is, the next big question is: <br>
+                                What should we do when that happens? Should we just let the program crash? <br><br>
+                                Of course not! <br><br>
+                                That’s exactly why we need <b>exception handling</b> — a way to deal with these
+                                unexpected situations without breaking our entire program. <br><br>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="iteratingIterablesModal" tabindex="-1" aria-labelledby="iteratingIterablesLabel"
+        aria-hidden="true">
+        <div class="modal-dialog custom-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="iteratingIterablesLabel">‘Try’ AND ‘Except’</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-container">
+                        <div class="text-content">
+                            <div style="font-size: 1.5rem;">
+                                Python gives us two handy keywords for handling exceptions:
+                                <ul>
+                                    <li>try</li>
+                                    <li>except</li>
+                                </ul>
+                                These keywords are used to define blocks of code:
+                                <ul>
+                                    <li> The try block contains the code that might cause an error, and</li>
+                                    <li> The except block defines how to respond if an error occurs.</li>
+                                </ul>
+                                Let’s have a look at the basic syntax of try and except blocks.
+                                <br><br>
+                                <img src="./images/Image_7.png" alt=""><br><br>
+                                You can think of the <b>try</b> block as the risky zone; any code in there might go
+                                wrong. <br><br>
+                                The <b>except</b> block is the safety net, where you decide what you want to do if
+                                something fails. <br><br>
+                                Let’s now take the same example we saw earlier — but this time, let’s modify it to
+                                include exception handling. <br><br>
+                                We start by adding the part of the code that could potentially go wrong inside the
+                                <b>try</b> block. That’s the input and the division. <br><br>
+                                <img src="./images/Image_8.png" alt=""><br><br>
+                                Right after the try block, we add an <b>except</b> block. This tells Python what to do
+                                if something goes wrong while running the code inside the <b>try</b> block.
+                                <br><br>
+                                <img src="./images/Image_9.png" alt=""><br><br>
+                                Now, if the user types ‘hello’ or tries to divide by zero, it prints a friendly message
+                                instead of crashing.
+                                <br><br>
+                                <img src="./images/Image_10.png" alt=""><br><br>
+
+                                <img src="./images/Image_11.png" alt=""><br><br>
+                                As of now, the except block just prints ‘Something went wrong:(’, but it doesn’t tell us
+                                which error happened. For debugging or improving our program, it’s often useful to see
+                                the actual error message. <br><br>
+                                <strong style="color: #28a745;">EXCEPTION OBJECT
+                                </strong> <br><br>
+                                Python lets us store the exception in an <b>exception object</b>. <br>
+                                Let’s have a look at the syntax of storing the exception in an exception object:
+                                <br><br>
+
+                                <img src="./images/Image_12.png" alt=""><br><br>
+                                Here, e is just a name we are giving to the exception object; you can call it anything,
+                                but e is commonly used. <br><br>
+                                Let’s update our previous code to include this.
+                                <br><br>
+
+                                <img src="./images/Image_13.png" alt=""><br><br>
+
+                                We’re not only handling the error — we’re also capturing the actual message Python gives
+                                when something goes wrong. <br><br>
+                                But what if you want to respond differently depending on what went wrong? Python lets
+                                you respond to specific errors.
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="membershipOperatorModal" tabindex="-1" aria-labelledby="membershipOperatorLabel"
+        aria-hidden="true">
+        <div class="modal-dialog custom-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="membershipOperatorLabel">HANDLING SPECIFIC EXCEPTIONS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-container">
+                        <div class="text-content">
+                            <div style="font-size: 1.5rem;">
+
+                                We can be smarter and handle each mistake differently using specific exception types.
+                                <br>
+                                Here is the syntax to handle a specific exception:
+                                <br><br>
+                                <img src="./images/Image_14.png" alt=""><br><br>
+
+                                Let’s say we want to handle the situation where the user enters something that isn’t a
+                                valid number, like the word "hello" instead of a number. <br><br>
+                                When this happens, Python raises a <b>ValueError</b> exception. <br><br>
+                                Let’s modify our code to specifically handle the <b>ValueError</b> exception.
+                                <br><br>
+                                <img src="./images/Image_15.png" alt=""><br><br>
+                                We can store the exception object using <b>‘as e’</b> even when we handle specific
+                                exceptions. <br><br>
+                                Let’s have a look at it.
+                                <br><br>
+                                <img src="./images/Image_16.png" alt=""><br><br>
+                                Python has some common exceptions that you might come across. Let’s have a look at them.
+                                <br><br>
+                                <h2 style="text-align: center;"><u>EXAMPLES OF COMMON EXCEPTIONS</u></h2> <br>
+                                <table>
+                                    <tr>
+                                        <th>Exception Name</th>
+                                        <th>When does it happen?</th>
+                                    </tr>
+                                    <tr>
+                                        <td>ValueError</td>
+                                        <td>This error occurs when a value is of the correct type, but it’s not what the
+                                            program expects.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ZeroDivisionError</td>
+                                        <td>When a number is divided by zero.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IndexError</td>
+                                        <td>When trying to access an index that is out of range.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TypeError</td>
+                                        <td>When an operation is applied to an object of an inappropriate type.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FileNotFoundError</td>
+                                        <td>Opening a file that doesn’t exist.</td>
+                                    </tr>
+                                </table>
+                                <br><br>
+                                You don’t need to memorize these, you’ll start recognizing them as you code more. <br>
+                                <br>
+                                So far, we’ve seen how to catch one specific error, but in real-world programs, more
+                                than one thing can go wrong. Maybe the user enters a value of the wrong type or
+                                accidentally tries to divide by zero. <br> <br>
+                                What if we want to handle these situations differently? <br> <br>
+                                Python gives us a couple of ways to do that. <br> <br>
+
+                                <h2 style="text-align: center;"><u>HANDLING MULTIPLE EXCEPTIONS</u></h2> <br>
+                                <strong style="color: #28a745;">SINGLE ‘except’ BLOCK WITH A TUPLE</strong> <br><br>
+                                We can catch more than one kind of exception in a single except block by passing a tuple
+                                of exception types. <br>
+                                You must use a tuple. Lists or other collections are not allowed. <br>
+                                Let’s have a look at the syntax:
+                                <br><br>
+                                <img src="./images/Image_17.png" alt=""><br><br>
+                                Let’s implement this in our code to handle both ValueError and ZeroDivisionError
+                                together.
+
+                                <br><br>
+                                <img src="./images/Image_18.png" alt=""><br><br>
+                                Let’s run the code and give 0 as input.
+
+                                <br><br>
+                                <img src="./images/Image_19.png" alt=""><br><br>
+
+                                Now, let’s run the code and give ‘hello’ as input.
+
+                                <br><br>
+                                <img src="./images/Image_20.png" alt=""><br><br>
+
+                                <strong style="color: #28a745;">MULTIPLE ‘except’ BLOCKS</strong>
+                                <br><br>
+                                If we want to respond differently to each kind of exception, we can use multiple except
+                                blocks. <br>
+                                Let’s have a look at the syntax:
+
+                                <br><br>
+                                <img src="./images/Image_21.png" alt=""><br><br>
+                                Let’s implement this in our code to handle both ValueError and ZeroDivisionError
+                                separately.
+                                <br><br>
+                                <img src="./images/Image_22.png" alt=""><br><br>
+                                Let’s run the code and give 0 as input.
+                                <br><br>
+                                <img src="./images/Image_23.png" alt=""><br><br>
+
+                                Let’s run the code by giving ‘hello’ as input. <br><br>
+
+                                <img src="./images/Image_24.png" alt=""><br><br>
+
+                                Now we’re being precise. Just like a doctor doesn't give the same medicine to everyone,
+                                we're giving each error the response it deserves. <br><br>
+                                So far, we have seen how to:
+                                <ul>
+                                    <li> Handle exceptions with try and except</li>
+                                    <li> Handle specific types of exceptions</li>
+                                    <li> Respond differently based on what went wrong</li>
+
+                                </ul>
+                                Python has two more tools that give us better control:
+
+                                <ul>
+                                    <li><b>else</b></li>
+                                    <li><b>finally</b></li>
+                                </ul>
+                                Let’s talk about <b>‘else’</b>.
+
+
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="elseInExceptionHandlingModal" tabindex="-1" aria-labelledby="membershipOperatorLabel"
+        aria-hidden="true">
+        <div class="modal-dialog custom-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="membershipOperatorLabel"> ‘else’ and ‘finally’ IN EXCEPTION HANDLING
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-container">
+                        <div class="text-content">
+                            <div style="font-size: 1.5rem;">
+
+                                Didn’t we already use else before... with if?" <br>
+                                Absolutely. You're not wrong. <br>
+                                In Python, the word else always means the "otherwise" part — the backup plan. <br>
+                                But the way it’s used depends on where you put it. <br>
+                                In exception handling, we use else to run code only if no error happened inside the try
+                                block. <br><br>
+
+                                So here's the idea: <br>
+                                <ul>
+                                    <li>try - "This might go wrong"</li>
+                                    <li> except - "Oops, it went wrong — let's fix it"</li>
+                                    <li> else - "Everything went fine — go ahead with the next safe step"</li>
+                                </ul>
+                                Syntax for <b>else</b> in Exception Handling:
+                                <br><br>
+                                <img src="./images/Image_25.png" alt=""><br><br>
+
+                                Let’s have a look at an example:
+
+                                <br><br>
+                                <img src="./images/Image_26.png" alt=""><br><br>
+                                Let’s run the code and give 12 as input.
+
+                                <br><br>
+                                <img src="./images/Image_27.png" alt=""><br><br>
+                                Now, let’s run the code and give twelve as input.
+                                <br><br>
+                                <img src="./images/Image_28.png" alt=""><br><br>
+
+                                In this code, if we type something like twelve, Python jumps to the except block, but if
+                                we type 12, it doesn’t need the except, so it moves to the else block. <br><br>
+                                ‘else’ block is helpful when you want to keep your success code separate from your
+                                error-handling code — makes the program cleaner and easier to read. <br><br>
+
+                                Now, let’s have a look at <b>‘finally’</b>. <br><br><br><br>
+                                </p>
+
+                            </div>
+                              <div class="text-content">
+                            <div style="font-size: 1.5rem;">
+
+                                <h2>Finally</h2>
+
+                                Sometimes, we want something to happen at the very end, no matter if the code failed or
+                                succeeded. <br><br>
+                                That’s what ‘finally’ is for. <br><br>
+                                It’s useful for actions that must always happen — like saving progress, closing a file,
+                                or showing a thank-you message. <br><br>
+                                Syntax for finally in exception handling:
+
+                                <br><br>
+                                <img src="./images/Image_29.png" alt=""><br><br>
+
+                                Let’s have a look at an example:
+
+                                <br><br>
+                                <img src="./images/Image_30.png" alt=""><br><br>
+                                Let’s give 5 as an input and check the output.
+
+
+                                <br><br>
+                                <img src="./images/Image_31.png" alt=""><br><br>
+                                Now, let’s try giving 0 as input and check the output.
+                                <br><br>
+                                <img src="./images/Image_32.png" alt=""><br><br>
+
+                                No matter what happens — error or success — the program always prints “Thank you for
+                                using the calculator.” <br>
+                                You might wonder, “Why not just put print("Thank you for using the calculator.") after
+                                all the try-except blocks? Wouldn't that do the same thing?” <br>
+                                Most of the time, it would work. But here’s why finally is special and important: <br>
+                                <ul>
+
+                                    <li>Code inside the finally block always runs, no matter what — whether an exception
+                                        happens or not, even if the program is interrupted early by a return, break, or
+                                        another exception that isn’t caught.</li>
+                                    <li>If you put that print outside, and an unexpected error causes the program to
+                                        stop immediately, that message never get printed.</li>
+                                    <li>Think of finally as a guarantee: it’s your cleanup crew, always on duty, making
+                                        sure important tasks get done your program exits a risky block of code.</li>
+                                </ul>
+
+                                Now it’s time for you to practice these concepts on your end.
+
+                                </p>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal fade" id="finallyInExceptionHandlingModal" tabindex="-1" aria-labelledby="membershipOperatorLabel"
+        aria-hidden="true">
+        <div class="modal-dialog custom-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="membershipOperatorLabel">  IN EXCEPTION HANDLING
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-container">
+                        <div class="text-content">
+                            <div style="font-size: 1.5rem;">
+
+                                Sometimes, we want something to happen at the very end, no matter if the code failed or
+                                succeeded. <br><br>
+                                That’s what ‘finally’ is for. <br><br>
+                                It’s useful for actions that must always happen — like saving progress, closing a file,
+                                or showing a thank-you message. <br><br>
+                                Syntax for finally in exception handling:
+
+                                <br><br>
+                                <img src="./images/Image_29.png" alt=""><br><br>
+
+                                Let’s have a look at an example:
+
+                                <br><br>
+                                <img src="./images/Image_30.png" alt=""><br><br>
+                                Let’s give 5 as an input and check the output.
+
+
+                                <br><br>
+                                <img src="./images/Image_31.png" alt=""><br><br>
+                                Now, let’s try giving 0 as input and check the output.
+                                <br><br>
+                                <img src="./images/Image_32.png" alt=""><br><br>
+
+                                No matter what happens — error or success — the program always prints “Thank you for
+                                using the calculator.” <br>
+                                You might wonder, “Why not just put print("Thank you for using the calculator.") after
+                                all the try-except blocks? Wouldn't that do the same thing?” <br>
+                                Most of the time, it would work. But here’s why finally is special and important: <br>
+                                <ul>
+
+                                    <li>Code inside the finally block always runs, no matter what — whether an exception
+                                        happens or not, even if the program is interrupted early by a return, break, or
+                                        another exception that isn’t caught.</li>
+                                    <li>If you put that print outside, and an unexpected error causes the program to
+                                        stop immediately, that message never get printed.</li>
+                                    <li>Think of finally as a guarantee: it’s your cleanup crew, always on duty, making
+                                        sure important tasks get done your program exits a risky block of code.</li>
+                                </ul>
+
+                                Now it’s time for you to practice these concepts on your end.
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
